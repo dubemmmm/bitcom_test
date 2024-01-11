@@ -1,0 +1,16 @@
+{% extends 'bitcom_app/base.html' %}
+{% block body_block %}
+<div class='container jumbotron'>
+    <h3>Summed Total Result for {{ selected_lga.lga_name }}</h3>
+    <p><strong>Total: {{ summed_results }}</strong></p>
+    <h3>Polling Units under {{ selected_lga.lga_name }}:</h3>
+    <ul>
+        {% for polling_unit in polling_units %}
+            <h3><li>{{ polling_unit.polling_unit_name }}</li><h3>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+
+

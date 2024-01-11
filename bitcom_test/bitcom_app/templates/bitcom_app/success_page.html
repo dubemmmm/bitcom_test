@@ -1,0 +1,17 @@
+{% extends 'bitcom_app/base.html' %}
+{% block body_block %}
+<div class='container jumbotron'>
+<h1>Success! Details Entered:</h1>
+    <p>Polling Unit: {{ new_results.polling_unit_name }}</p>
+    <p>PDP Votes: {{ new_results.pdp_votes }}</p>
+    <p>ACN Votes: {{ new_results.acn_votes }}</p>
+    <p>DPP Votes: {{ new_results.dpp_votes }}</p>
+    <p>PPA Votes: {{ new_results.ppa_votes }}</p>
+    <p>CDC Votes: {{ new_results.cdc_votes }}</p>
+    <p>ANPP Votes: {{ new_results.anpp_votes }}</p>
+    <p>JP Votes: {{ new_results.jp_votes }}</p>
+    <p>Labour Votes: {{ new_results.labour_votes }}</p>
+    <p>CPP Votes: {{ new_results.cpp_votes }}</p>
+    <a href="{% url 'new_polling_unit_results' %}">Go Back</a>
+</div>
+{% endblock %}

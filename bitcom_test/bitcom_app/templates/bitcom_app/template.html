@@ -1,0 +1,44 @@
+{% extends 'bitcom_app/base.html'%}
+{% block body_block %}
+<div class='container jumbotron'>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    
+        th {
+            background-color: #f2f2f2;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+<h2>To view the results of your Polling Unit, click the name of your polling unit</h2>
+<h2>Please note, the results for Uniqueid's greater that 27 are yet to be uploaded.</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Polling Unit Name</th>
+                <th>Unique ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in all_objects %}
+            <tr>
+                <td><a href="{% url 'polling_unit_results' uniqueid=obj.uniqueid %}">{{ obj.polling_unit_name }}</a></td>
+                <td>{{ obj.uniqueid }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

@@ -1,0 +1,12 @@
+{% extends 'bitcom_app/base.html'%}
+{% block body_block %}
+<div class='container jumbotron'>
+<h3>List of Local Governments</h3>
+    <ul>
+        {% for lga in lgas %}
+            <h3><li><a href="{% url 'lga_results' pk=lga.uniqueid %}">{{ lga.lga_name }}</a></li><h2>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
